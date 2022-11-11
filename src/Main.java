@@ -1,0 +1,35 @@
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class Main {
+    public static void main(String[] args) {      
+        OpenBrowser();
+       //SearchGmail();
+
+
+    }
+    public static void OpenBrowser() {
+        //System.setProperty("webdriver.chrome.driver","C:\\Users\\checd\\OneDrive\\Pulpit\\Webdriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://www.google.com");
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//*[@id=\"L2AGLb\"]/div")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys("Gmail");
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys(Keys.ENTER);                                                                               //driver.quit();
+
+    }
+    public static void SearchGmail() {
+         WebDriver driver = new ChromeDriver();
+         driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys("Gmail");
+         driver.findElement(By.id("element_id")).sendKeys(Keys.ENTER);
+
+         
+
+
+    }
+
+}

@@ -1,5 +1,7 @@
 package $org.example;
 
+import org.selenium.*;
+
 /**
  * Hello world!
  *
