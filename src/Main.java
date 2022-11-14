@@ -28,6 +28,11 @@ public class Main {
         driver.findElement(By.name("login")).sendKeys("checdd@gmail.com");
         driver.findElement(By.name("password")).sendKeys("kufowo92");
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div/div/div[2]/button[2]/div")).click();
+        WebDriverWait await = new WebDriverWait(driver, 3);
+        WebElement elo = await.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"app\"]/div[6]/div[1]/nav/div/div[4]/div/button/div/div")));
+        elo.click();
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div[6]/div[1]/nav/div/div[4]/div/button/div/div")).click();
+        driver.findElement(By.xpath("//*[@id=\"logout-button\"]/div[1]/div")).click();
         driver.quit();
 
     }
