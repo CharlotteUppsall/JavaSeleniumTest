@@ -27,9 +27,8 @@ public class Main {
         el.click();
         driver.findElement(By.name("login")).sendKeys("checdd@gmail.com");
         driver.findElement(By.name("password")).sendKeys("kufowo92");
-        driver.findElement(By.className("v-btn__content")).click();
-
-        //driver.quit();
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div/div/div[2]/button[2]/div")).click();
+        driver.quit();
 
     }
 
