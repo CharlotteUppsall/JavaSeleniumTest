@@ -1,4 +1,4 @@
-package samplepackage;
+package Labelf;
 
 public class SampleClass {
 }
