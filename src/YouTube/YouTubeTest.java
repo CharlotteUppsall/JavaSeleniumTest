@@ -1,3 +1,5 @@
+package YouTube;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,8 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class YouTubeTest {
     public static void main(String[] args ){
-
          //System.setProperty("webdriver.chrome.driver","C:\\Users\\checd\\OneDrive\\Pulpit\\Webdriver\\chromedriver.exe");
+
          WebDriver driver = new ChromeDriver();
          driver.manage().window().maximize();
 
