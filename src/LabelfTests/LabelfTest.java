@@ -5,8 +5,7 @@ import Helpers.SeleniumHelper;
 import org.junit.*;
 import static Helpers.LoginUtils.*;
 import static Locators.LoginWindowLocators.*;
-import static Locators.userIconMenu.logoutButton;
-import static Locators.userIconMenu.userMenuIcon;
+import static Locators.userIconMenu.*;
 
 public class LabelfTest extends DriverSetup {
     @Test
@@ -24,3 +23,4 @@ public class LabelfTest extends DriverSetup {
 
     }
 }
+
