@@ -1,11 +1,12 @@
 package Helpers;
 
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
 import java.util.List;
 import java.util.Set;
 
@@ -14,8 +15,8 @@ public class DriverSetup {
     static WebDriver driver;
     static WebDriverWait driverWait;
 
-    @Before
-    public void setUp() {
+    @BeforeSuite
+    public static void setUp() {
 
         driver = new WebDriver() {
             @Override
@@ -83,14 +84,16 @@ public class DriverSetup {
                 return null;
             }
         };
+
         driverWait = new WebDriverWait(driver, 10);
 
         driver.manage().window().maximize();
 
         driver.get("https://stag.labelf.ai/login");
+
     }
 
-    @After
+    @AfterSuite
     public void afterMethod() {
         driver.quit();
         System.out.println("Everything went well!");
