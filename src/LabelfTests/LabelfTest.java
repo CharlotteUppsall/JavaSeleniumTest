@@ -2,24 +2,32 @@ package LabelfTests;
 
 import Helpers.DriverSetup;
 import Helpers.SeleniumHelper;
-import org.junit.*;
+import org.junit.Test;
+
 import static Helpers.LoginUtils.*;
+import static Locators.HamburgerMenu.*;
 import static Locators.LoginWindowLocators.*;
 import static Locators.userIconMenu.*;
 
 public class LabelfTest extends DriverSetup {
     @Test
-    public void loginTest(){
-        //System.setProperty("webdriver.chrome.driver","C:\\Users\\checd\\OneDrive\\Pulpit\\Webdriver\\chromedriver.exe");//driver directory
-        SeleniumHelper.click(acceptCookies);
+    public void VerifyHomePage() throws InterruptedException {
 
-        SeleniumHelper.setText(usernameBox, username);
-        SeleniumHelper.setText(passwordBox, password);
-        SeleniumHelper.click(loginButton);
+        //System.setProperty("webdriver.chrome.driver","C:\\Users\\checd\\OneDrive\\Pulpit\\Webdriver\\chromedriver.exe");//driver director
+        new SeleniumHelper()
+                .click(acceptCookies)
+                .setText(usernameBox, username)
+                .setText(passwordBox, password)
+                .click(loginButton)
 
-        SeleniumHelper.click(userMenuIcon);
-        SeleniumHelper.click(logoutButton);
-        SeleniumHelper.click(element1);
+                .click(ModelsButton)
+                .click(DatasetsButton)
+                .click(IntegrationsButton)
+                .click(HamburgerMenu)
+
+                .click(userMenuIcon)
+                .click(logoutButton);
+
 
     }
 }

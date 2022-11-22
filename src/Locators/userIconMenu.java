@@ -3,14 +3,13 @@ package Locators;
 import org.openqa.selenium.By;
 
 public class userIconMenu {
-    public static By element1 = By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div/div/div[2]/button[2]/div");
 
-    public static By userMenuIcon = By.cssSelector(".v-avatar");
-    public static By logoutButton = By.linkText("Logout");
-    public static By ModelsButton = By.className ("v-btn__content");
-    public static By DatasetsButton = By.xpath("//*[@id=\"app\"]/div[6]/div[1]/nav/div/a[2]/div/span[1]");
-    public static By IntegrationsButton = By.linkText("Integrations");
-    public static By HamburgerMenu = By.cssSelector("v-icon icon-menu-teal material-icons theme--light");
+    public static By userMenuIcon = By.xpath("//*[@id=\"app\"]/div[5]/div[1]/nav/div/div[4]/div/button/div/div/span");
+
+    public static By ModelsButton = By.xpath("//*[@id=\"models-button-navbar\"]/div/span[1]");
+    public static By DatasetsButton = By.xpath("//*[contains(text(),'table_view')]");
+    public static By IntegrationsButton = By.xpath("//*[contains(text(),'integration_instructions')]");
+    public static By HamburgerMenu = By.xpath("//*[contains(text(),'menu')]");
     public static By NewMoodelButton = By.linkText("New model");
 
 }

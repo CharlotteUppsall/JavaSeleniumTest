@@ -7,18 +7,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumHelper extends DriverSetup {
 
-
-    public static void click(By element){
+    public SeleniumHelper click(By element) {
         waitForElement(element);
         driver.findElement(element).click();
+        return this;
     }
 
-    public static void setText(By element, String textToSend){
+    public SeleniumHelper setText(By element, String textToSend){
         waitForElement(element);
         driver.findElement(element).sendKeys(textToSend);
+        return this;
     }
 
-    private static void waitForElement(By element){
+    private SeleniumHelper waitForElement(By element){
         WebElement firstResult = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.elementToBeClickable(element));
         if (firstResult.isDisplayed()){
@@ -27,5 +28,6 @@ public class SeleniumHelper extends DriverSetup {
             System.out.println("Could not find element "+element);
             driver.quit();
         }
+        return this;
     }
 }

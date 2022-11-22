@@ -3,6 +3,7 @@ package Locators;
 import org.openqa.selenium.By;
 
 public class HamburgerMenu {
+    public static By logoutButton = By.xpath("//*[contains(text(),'Logout')]");
     public static By MyFirstWorkspaceInHamburger = By.linkText("My first workspace");
     public static By DatasetsInHamburger = By.xpath("//*[@id=\"app\"]/div[3]/div/div[1]/div[4]/a/div[1]/div");
     public static By SharedInHamburger = By.linkText("Shared");
