@@ -10,6 +10,7 @@ import static Locators.LoginWindowLocators.*;
 import static Locators.ModelOverview.StartExploreModel;
 import static Locators.ModelOverview.StartTrainingButtonInOverview;
 import static Locators.userIconMenu.*;
+import static Locators.NewModel.*;
 
 
 public class LabelfTest extends DriverSetup {
@@ -35,6 +36,20 @@ public class LabelfTest extends DriverSetup {
     }
     @Test
     public void StartTrainingCreatedModel() throws InterruptedException{
+
+        new SeleniumHelper()
+                .click(acceptCookies)
+                .setText(usernameBox,username)
+                .setText(passwordBox,password)
+                .click(loginButton)
+                .click(NewMoodelButton)
+                .click(StartTrainingButtonInOverview)
+                .click(StartExploreModel);
+
+
+    }
+    @Test
+    public void VerifyHomePage2() throws InterruptedException{
 
         new SeleniumHelper()
                 .click(acceptCookies)
