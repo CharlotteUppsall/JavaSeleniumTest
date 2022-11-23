@@ -1,6 +1,6 @@
 package Helpers;
 
 public class LoginUtils {
-    public static String username = "checdd@gmail.com";
-    public static String password = "kufowo92";
+    public static String username = "charlotte.uppsall@iths.se";
+    public static String password = "mjukvara21";
 }
