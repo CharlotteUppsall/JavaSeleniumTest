@@ -19,6 +19,12 @@ public class SeleniumHelper extends DriverSetup {
         return this;
     }
 
+    public SeleniumHelper isDisplayed (By element) {
+        waitForElement(element);
+        driver.findElement(element).isEnabled();
+        return this;
+    }
+
     private SeleniumHelper waitForElement(By element){
         WebElement firstResult = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.elementToBeClickable(element));
