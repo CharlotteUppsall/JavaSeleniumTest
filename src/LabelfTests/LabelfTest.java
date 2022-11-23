@@ -13,7 +13,7 @@ public class LabelfTest extends DriverSetup {
     @Test
     public void VerifyHomePage() throws InterruptedException {
 
-        //System.setProperty("webdriver.chrome.driver","C:\\Users\\checd\\OneDrive\\Pulpit\\Webdriver\\chromedriver.exe");//driver director
+
         new SeleniumHelper()
                 .click(acceptCookies)
                 .setText(usernameBox, username)

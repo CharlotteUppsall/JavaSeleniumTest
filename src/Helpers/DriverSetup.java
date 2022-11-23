@@ -13,7 +13,7 @@ public class DriverSetup {
 
     @BeforeClass
     public static void StartDriver() {
-
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\webdriver107\\chromedriver.exe");//driver director
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
