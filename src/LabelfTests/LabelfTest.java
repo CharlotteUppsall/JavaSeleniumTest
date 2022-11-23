@@ -48,19 +48,5 @@ public class LabelfTest extends DriverSetup {
 
 
     }
-    @Test
-    public void VerifyHomePage2() throws InterruptedException{
-
-        new SeleniumHelper()
-                .click(acceptCookies)
-                .setText(usernameBox,username)
-                .setText(passwordBox,password)
-                .click(loginButton)
-                .click(NewMoodelButton)
-                .click(StartTrainingButtonInOverview)
-                .click(StartExploreModel);
-
-
-    }
 }
 
