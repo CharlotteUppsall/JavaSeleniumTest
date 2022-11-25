@@ -27,7 +27,7 @@ public class DriverSetup {
 
     @AfterClass
     public static void afterMethod() {
-        driver.quit();
+        //driver.quit();
         System.out.println("Test Finished!");
     }
 }

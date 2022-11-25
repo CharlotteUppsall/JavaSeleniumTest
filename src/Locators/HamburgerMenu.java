@@ -11,7 +11,7 @@ public class HamburgerMenu {
     public static By BillingInHamburger = By.xpath("//*[contains(text(),'Billing')]");
     public static By IntegrationsInHambureger = By.xpath("//*[contains(text(),'Integrations')]");
     public static By CreateWorkspaceInHamburger = By.xpath("//*[contains(text(),'Create workspace')]");
-    public static By MyFirstWorkspaceInHamburger = By.xpath("//*[@id=\"app\"]/div[5]/div/div[2]/div[3]/a/div[1]/div");
+
 
 
 

@@ -2,18 +2,14 @@ package LabelfTests;
 
 import Helpers.DriverSetup;
 import Helpers.SeleniumHelper;
-import Locators.HamburgerMenu;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.TestNGAntTask;
-
 import java.util.*;
-
 import static Helpers.LoginUtils.*;
 import static Locators.HamburgerMenu.*;
 import static Locators.LoginWindowLocators.*;
-import static Locators.ModelOverview.*;
+import static Locators.EnteringTestarModel.*;
+import static Locators.SartTrainingPage.*;
 import static Locators.userIconMenu.*;
 
 
@@ -25,6 +21,7 @@ public class LabelfTest extends DriverSetup {
         List<By> hamburgerMenu = Arrays.asList(ModelsButton, DatasetsInHamburger,
                 SharedInHamburger, UsersInHamburger, APIinHambureger, BillingInHamburger, IntegrationsInHambureger,
                 CreateWorkspaceInHamburger);
+        List<By> StartTrainingPage = Arrays.asList(SettingOnStartTrainingPage);
 
         //Logging in
         new SeleniumHelper()
@@ -41,23 +38,15 @@ public class LabelfTest extends DriverSetup {
         //Asserts that elements are displayed in the hamburger menu
         new SeleniumHelper()
                 .isDisplayed(hamburgerMenu)
-                .click(HamburgerMenu)
+                .click(HamburgerMenu);
 
-                .click(userMenuIcon)
-                .click(logoutButton);
-    }
-
-    @Test
-    public void VerifyHomePage2() throws InterruptedException {
-
+        //Opening a created model
         new SeleniumHelper()
-                .click(acceptCookies)
-                .setText(usernameBox, username)
-                .setText(passwordBox, password)
-                .click(loginButton)
-                .click(NewModelButton)
-                .click(StartTrainingButtonInOverview)
-                .click(StartExploreModel);
+                .click(OverviewTestarModel);
+                //.click(StartTrainingButtonInOverview);
+                //.click(StartExploreModel)
+                //.click(userMenuIcon)
+                //.click(logoutButton);
     }
 }
 
