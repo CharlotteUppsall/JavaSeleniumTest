@@ -11,6 +11,6 @@ public class userIconMenu {
     public static By DatasetsButton = By.xpath("//*[contains(text(),'table_view')]");
     public static By IntegrationsButton = By.xpath("//*[contains(text(),'integration_instructions')]");
     public static By HamburgerMenu = By.xpath("//*[contains(text(),'menu')]");
-    public static By NewMoodelButton = By.xpath("//*[@id=\"model-card-title\"]/a");
+    public static By NewModelButton = By.xpath("//*[@id=\"model-card-title\"]/a");
 
 }

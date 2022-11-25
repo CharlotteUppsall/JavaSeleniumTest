@@ -2,7 +2,13 @@ package LabelfTests;
 
 import Helpers.DriverSetup;
 import Helpers.SeleniumHelper;
+import Locators.HamburgerMenu;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.TestNGAntTask;
+
+import java.util.*;
 
 import static Helpers.LoginUtils.*;
 import static Locators.HamburgerMenu.*;
@@ -15,28 +21,26 @@ public class LabelfTest extends DriverSetup {
     @Test
     public void VerifyHomePage() throws InterruptedException {
 
+        List<By> homePage = Arrays.asList(ModelsButton, DatasetsButton, IntegrationsButton, HamburgerMenu);
+        List<By> hamburgerMenu = Arrays.asList(ModelsButton, DatasetsInHamburger,
+                SharedInHamburger, UsersInHamburger, APIinHambureger, BillingInHamburger, IntegrationsInHambureger,
+                CreateWorkspaceInHamburger);
+
+        //Logging in
         new SeleniumHelper()
-                .isDisplayed(acceptCookies)
                 .click(acceptCookies)
                 .setText(usernameBox, username)
                 .setText(passwordBox, password)
                 .click(loginButton)
+                .click(HamburgerMenu);
 
-                .isDisplayed(ModelsButton)
-                .isDisplayed(DatasetsButton)
-                .isDisplayed(IntegrationsButton)
-                .isDisplayed(HamburgerMenu)
+        //Asserts that elements are displayed on page
+        new SeleniumHelper()
+                .isDisplayed(homePage);
 
-                .click(HamburgerMenu)
-                .isDisplayed(MyFirstWorkspaceInHamburger)
-                .isDisplayed(ModelsButton)
-                .isDisplayed(DatasetsInHamburger)
-                .isDisplayed(SharedInHamburger)
-                .isDisplayed(UsersInHamburger)
-                .isDisplayed(APIinHambureger)
-                .isDisplayed(BillingInHamburger)
-                .isDisplayed(IntegrationsInHambureger)
-                .isDisplayed(CreateWorkspaceInHamburger)
+        //Asserts that elements are displayed in the hamburger menu
+        new SeleniumHelper()
+                .isDisplayed(hamburgerMenu)
                 .click(HamburgerMenu)
 
                 .click(userMenuIcon)
@@ -51,7 +55,7 @@ public class LabelfTest extends DriverSetup {
                 .setText(usernameBox, username)
                 .setText(passwordBox, password)
                 .click(loginButton)
-                .click(NewMoodelButton)
+                .click(NewModelButton)
                 .click(StartTrainingButtonInOverview)
                 .click(StartExploreModel);
     }
