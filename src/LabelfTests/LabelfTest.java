@@ -8,9 +8,11 @@ import java.util.*;
 import static Helpers.LoginUtils.*;
 import static Locators.HamburgerMenu.*;
 import static Locators.LoginWindow.*;
-import static Locators.EnteringTestarModel.*;
 import static Locators.SartTrainingPage.*;
+import static Locators.StartTrainingTestarModel.*;
+import static Locators.TestarModel.*;
 import static Locators.userIconMenu.*;
+
 
 
 public class LabelfTest extends DriverSetup {
@@ -24,6 +26,8 @@ public class LabelfTest extends DriverSetup {
         List<By> startTrainingPage = Arrays.asList(ModelsButton,DatasetsButton, IntegrationsButton, HamburgerMenu,
                 SettingOnStartTrainingPage,OveriewOnStartTrainingPage, MetricsOnStartTrainingPage, APIOnStartTrainingPage,
                 StartTrainingOnStartTrainingPage);
+        List<By> TestarModelPage = Arrays.asList(ExploreModelInStartTrainingTestarModel, NewInStartTrainingTestarModel,
+                SettingsInStartTrainingTestarModel, CloseButtonInStartTrainingTestarModel);
 
         //Logging in
         new SeleniumHelper()
@@ -42,22 +46,21 @@ public class LabelfTest extends DriverSetup {
                 .isDisplayed(hamburgerMenu)
                 .click(HamburgerMenu);
 
+
         //Opening a created model
         new SeleniumHelper()
-                .click(OverviewTestarModel);
+               .click(OpeningTestarModel);
 
         //Asserts that elements are displayed in the StartTrainingPage
         new SeleniumHelper()
                 .isDisplayed(startTrainingPage)
                 .click(StartTrainingOnStartTrainingPage);
 
-        //Opening Start Training
-        new SeleniumHelper();
+        //Asserts That elements are displayed in the StartTrainingTestarModel
+        new SeleniumHelper()
+                .isDisplayed(TestarModelPage)
+                .click(ExploreModelInStartTrainingTestarModel);
 
-               //.click(StartTrainingButtonInOverview);
-                //.click(StartExploreModel)
-                //.click(userMenuIcon)
-                //.click(logoutButton);
     }
 }
 
