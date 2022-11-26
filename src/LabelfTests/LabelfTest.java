@@ -6,9 +6,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import java.util.*;
 import static Helpers.LoginUtils.*;
+import static Locators.EnteringTestarModel.OverviewTestarModel;
 import static Locators.HamburgerMenu.*;
 import static Locators.LoginWindow.*;
-import static Locators.EnteringTestarModel.*;
 import static Locators.SartTrainingPage.*;
 import static Locators.userIconMenu.*;
 
@@ -42,22 +42,16 @@ public class LabelfTest extends DriverSetup {
                 .isDisplayed(hamburgerMenu)
                 .click(HamburgerMenu);
 
+
         //Opening a created model
         new SeleniumHelper()
-                .click(OverviewTestarModel);
+               .click(OverviewTestarModel);
 
         //Asserts that elements are displayed in the StartTrainingPage
         new SeleniumHelper()
                 .isDisplayed(startTrainingPage)
                 .click(StartTrainingOnStartTrainingPage);
 
-        //Opening Start Training
-        new SeleniumHelper();
-
-               //.click(StartTrainingButtonInOverview);
-                //.click(StartExploreModel)
-                //.click(userMenuIcon)
-                //.click(logoutButton);
     }
 }
 
