@@ -27,7 +27,7 @@ public class LabelfTest extends DriverSetup {
                 SettingOnStartTrainingPage,OveriewOnStartTrainingPage, MetricsOnStartTrainingPage, APIOnStartTrainingPage,
                 StartTrainingOnStartTrainingPage);
         List<By> TestarModelPage = Arrays.asList(ExploreModelInStartTrainingTestarModel, NewInStartTrainingTestarModel,
-                SettingsInStartTrainingTestarModel, CloseButtonInStartTrainingTestarModel);
+                SettingsInStartTrainingTestarModel, CloseButtonInStartTrainingTestarModel,AddAlabelInStartTrainingTestarModel);
 
         //Logging in
         new SeleniumHelper()
