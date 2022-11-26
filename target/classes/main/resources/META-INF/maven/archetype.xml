@@ -1,0 +1,9 @@
+<archetype>
+  <id>untitled2</id>
+  <sources>
+    <source>Helpers/main/java/App.java</source>
+  </sources>
+  <testSources>
+    <source>Helpers/test/java/AppTest.java</source>
+  </testSources>
+</archetype>

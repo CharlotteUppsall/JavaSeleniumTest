@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import java.util.*;
 import static Helpers.LoginUtils.*;
 import static Locators.HamburgerMenu.*;
-import static Locators.LoginWindowLocators.*;
+import static Locators.LoginWindow.*;
 import static Locators.EnteringTestarModel.*;
 import static Locators.SartTrainingPage.*;
 import static Locators.userIconMenu.*;
@@ -21,19 +21,21 @@ public class LabelfTest extends DriverSetup {
         List<By> hamburgerMenu = Arrays.asList(ModelsButton, DatasetsInHamburger,
                 SharedInHamburger, UsersInHamburger, APIinHambureger, BillingInHamburger, IntegrationsInHambureger,
                 CreateWorkspaceInHamburger);
-        List<By> StartTrainingPage = Arrays.asList(SettingOnStartTrainingPage);
+        List<By> startTrainingPage = Arrays.asList(ModelsButton,DatasetsButton, IntegrationsButton, HamburgerMenu,
+                SettingOnStartTrainingPage,OveriewOnStartTrainingPage, MetricsOnStartTrainingPage, APIOnStartTrainingPage,
+                StartTrainingOnStartTrainingPage);
 
         //Logging in
         new SeleniumHelper()
                 .click(acceptCookies)
                 .setText(usernameBox, username)
                 .setText(passwordBox, password)
-                .click(loginButton)
-                .click(HamburgerMenu);
+                .click(loginButton);
 
         //Asserts that elements are displayed on page
         new SeleniumHelper()
-                .isDisplayed(homePage);
+                .isDisplayed(homePage)
+                .click(HamburgerMenu);
 
         //Asserts that elements are displayed in the hamburger menu
         new SeleniumHelper()
@@ -43,7 +45,16 @@ public class LabelfTest extends DriverSetup {
         //Opening a created model
         new SeleniumHelper()
                 .click(OverviewTestarModel);
-                //.click(StartTrainingButtonInOverview);
+
+        //Asserts that elements are displayed in the StartTrainingPage
+        new SeleniumHelper()
+                .isDisplayed(startTrainingPage)
+                .click(StartTrainingOnStartTrainingPage);
+
+        //Opening Start Training
+        new SeleniumHelper();
+
+               //.click(StartTrainingButtonInOverview);
                 //.click(StartExploreModel)
                 //.click(userMenuIcon)
                 //.click(logoutButton);

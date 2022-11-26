@@ -14,7 +14,7 @@ public class DriverSetup {
     @BeforeClass
     public static void StartDriver() {
         //System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\webdriver107\\chromedriver.exe");//CHARLOTTES driver director
-        //System.setProperty("webdriver.chrome.driver","C:\\Users\\checd\\IdeaProjects\\chromedriver.exe");//DAWID driver director
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\checd\\IdeaProjects\\chromedriver.exe");//DAWID driver director
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
