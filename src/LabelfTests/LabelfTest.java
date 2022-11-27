@@ -6,13 +6,13 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import java.util.*;
 import static Helpers.LoginUtils.*;
+import static Locators.AddingLabelsToTestarModel.*;
 import static Locators.HamburgerMenu.*;
 import static Locators.LoginWindow.*;
 import static Locators.SartTrainingPage.*;
 import static Locators.StartTrainingTestarModel.*;
 import static Locators.TestarModel.*;
 import static Locators.userIconMenu.*;
-
 
 
 public class LabelfTest extends DriverSetup {
@@ -36,20 +36,16 @@ public class LabelfTest extends DriverSetup {
                 .setText(passwordBox, password)
                 .click(loginButton);
 
-        //Asserts that elements are displayed on page
+        //Asserts that elements are displayed on homePage
         new SeleniumHelper()
                 .isDisplayed(homePage)
                 .click(HamburgerMenu);
 
-        //Asserts that elements are displayed in the hamburger menu
+        //Asserts that elements are displayed in the hamburger menu and opening testar model
         new SeleniumHelper()
                 .isDisplayed(hamburgerMenu)
-                .click(HamburgerMenu);
-
-
-        //Opening a created model
-        new SeleniumHelper()
-               .click(OpeningTestarModel);
+                .click(HamburgerMenu)
+                .click(OpeningTestarModel);
 
         //Asserts that elements are displayed in the StartTrainingPage
         new SeleniumHelper()
@@ -59,7 +55,12 @@ public class LabelfTest extends DriverSetup {
         //Asserts That elements are displayed in the StartTrainingTestarModel
         new SeleniumHelper()
                 .isDisplayed(TestarModelPage)
-                .click(ExploreModelInStartTrainingTestarModel);
+
+                //Creating a label
+                .click(AddAlabelInStartTrainingTestarModel)
+                .setText(NameofaddedLabel, NameOfLabel)
+                .setText(ExampleOdAddedLabel, ExampleOfFirstLabel);
+
 
     }
 }
