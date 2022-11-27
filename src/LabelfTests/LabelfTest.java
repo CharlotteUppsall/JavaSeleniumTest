@@ -55,11 +55,7 @@ public class LabelfTest extends DriverSetup {
         //Asserts That elements are displayed in the StartTrainingTestarModel
         new SeleniumHelper()
                 .isDisplayed(TestarModelPage)
-
-                //Creating a label
-                .click(AddAlabelInStartTrainingTestarModel)
-                .setText(NameofaddedLabel, NameOfLabel)
-                .setText(ExampleOdAddedLabel, ExampleOfFirstLabel);
+                .click(ExploreModelInStartTrainingTestarModel);
 
 
     }

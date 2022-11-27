@@ -7,5 +7,6 @@ public class AddingLabelsToTestarModel {
     public static By ExampleOdAddedLabel = By.xpath("//*[contains(text(),'Please provide a good example text for this label')]");
     public static String NameOfLabel = "First Label";
     public static String ExampleOfFirstLabel = "This is an exmples of first label.";
+    public static By EploreModelInTestarModel = By.xpath("//*[contains(text(),'Explore model')]");
 
 }
