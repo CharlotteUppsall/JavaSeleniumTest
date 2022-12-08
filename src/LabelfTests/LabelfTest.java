@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import java.util.*;
 import static Helpers.LoginUtils.*;
 import static Locators.AddingLabelsToTestarModel.*;
+import static Locators.ClusterPage.*;
 import static Locators.HamburgerMenu.*;
 import static Locators.LoginWindow.*;
 import static Locators.SartTrainingPage.*;
@@ -28,6 +29,7 @@ public class LabelfTest extends DriverSetup {
                 StartTrainingOnStartTrainingPage);
         List<By> TestarModelPage = Arrays.asList(ExploreModelInStartTrainingTestarModel, NewInStartTrainingTestarModel,
                 SettingsInStartTrainingTestarModel, CloseButtonInStartTrainingTestarModel,AddAlabelInStartTrainingTestarModel);
+        List<By> ClusterPage = Arrays.asList(Previous, Next,ClusterList, CLOSE,Search);
 
         //Logging in
         new SeleniumHelper()
@@ -56,6 +58,10 @@ public class LabelfTest extends DriverSetup {
         new SeleniumHelper()
                 .isDisplayed(TestarModelPage)
                 .click(ExploreModelInStartTrainingTestarModel);
+
+        //Veryfing Cluster Page
+        new SeleniumHelper()
+                .isDisplayed(ClusterPage);
 
 
     }
