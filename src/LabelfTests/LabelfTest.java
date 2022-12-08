@@ -4,9 +4,13 @@ import Helpers.DriverSetup;
 import Helpers.SeleniumHelper;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+
 import java.util.*;
+
+import static Helpers.LabelUtils.*;
 import static Helpers.LoginUtils.*;
-import static Locators.AddingLabelsToTestarModel.*;
 import static Locators.ClusterPage.*;
 import static Locators.HamburgerMenu.*;
 import static Locators.LoginWindow.*;
@@ -14,6 +18,7 @@ import static Locators.SartTrainingPage.*;
 import static Locators.StartTrainingTestarModel.*;
 import static Locators.TestarModel.*;
 import static Locators.userIconMenu.*;
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.*;
 
 
 public class LabelfTest extends DriverSetup {
@@ -57,13 +62,22 @@ public class LabelfTest extends DriverSetup {
         //Asserts That elements are displayed in the StartTrainingTestarModel
         new SeleniumHelper()
                 .isDisplayed(TestarModelPage)
-                .click(ExploreModelInStartTrainingTestarModel);
+                .click(AddAlabelInStartTrainingTestarModel)
+                .setText(NameOfLabelBox, NameOfFirstLabel)
+                .setText(LabelDescription, DescriptionOfFirstLabel);
 
-        //Veryfing Cluster Page
+        // Scroll down to "Create Label button"
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement Element = driver.findElement(By.xpath("//*[@id=\"app\"]/div[8]/div/div[1]/div[4]/div/div/span/div[2]/div[2]/form/div[2]"));
+        js.executeScript("arguments[0].scrollIntoView();", Element);
+
         new SeleniumHelper()
-                .isDisplayed(ClusterPage);
+                .click(AddNewelyCreatedLabel);
 
 
+        //Opens and Veryfies Cluster Page
+        //new SeleniumHelper()
+               // .isDisplayed(ClusterPage);
     }
 }
 
