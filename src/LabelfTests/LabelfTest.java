@@ -18,7 +18,7 @@ import static Locators.SartTrainingPage.*;
 import static Locators.StartTrainingTestarModel.*;
 import static Locators.TestarModel.*;
 import static Locators.userIconMenu.*;
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.*;
+
 
 
 public class LabelfTest extends DriverSetup {
@@ -73,6 +73,7 @@ public class LabelfTest extends DriverSetup {
 
         new SeleniumHelper()
                 .click(AddNewelyCreatedLabel);
+
 
 
         //Opens and Veryfies Cluster Page

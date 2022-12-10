@@ -10,5 +10,5 @@ public class StartTrainingTestarModel {
     public static By AddAlabelInStartTrainingTestarModel = By.xpath("//*[@id=\"app\"]/div[7]/div/div[1]/div[4]/div/div/span/div[2]/div/div[2]/div/div/button/div/i");
     public static By NameOfLabelBox = By.xpath ("//*[@id=\"app\"]/div[8]/div/div[1]/div[4]/div/div/span/div[2]/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input");
     public static By LabelDescription = By.xpath("//*[@id=\"app\"]/div[8]/div/div[1]/div[4]/div/div/span/div[2]/div[2]/form/div[1]/div/div/div[2]/div[4]/div/div/div[1]/div[1]/textarea");
-    public static By AddNewelyCreatedLabel = By.xpath("//*[@id=\"app\"]/div[8]/div/div[1]/div[4]/div/div/span/div[2]/div[2]/form/div[2]");
+    public static By AddNewelyCreatedLabel = By.xpath("//*[contains(text(),'Add label')]");
 }
