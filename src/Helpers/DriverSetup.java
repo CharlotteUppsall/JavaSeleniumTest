@@ -22,7 +22,7 @@ public class DriverSetup {
     }
 
     public void getWaitDriver() {
-        WebDriverWait driverWait = new WebDriverWait(driver, 10);
+        WebDriverWait driverWait = new WebDriverWait(driver, 15);
     }
 
     @AfterClass

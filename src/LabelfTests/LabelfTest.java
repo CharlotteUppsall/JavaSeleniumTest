@@ -3,15 +3,19 @@ package LabelfTests;
 import Helpers.DriverSetup;
 import Helpers.SeleniumHelper;
 import Locators.StartTrainingTestarModel;
+import com.google.common.base.Verify;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.*;
 
 import static Helpers.LabelUtils.*;
 import static Helpers.LoginUtils.*;
+import static Locators.ChoosingLabels.*;
 import static Locators.ClusterPage.*;
 import static Locators.HamburgerMenu.*;
 import static Locators.LoginWindow.*;
@@ -62,11 +66,23 @@ public class LabelfTest extends DriverSetup {
 
         //Asserts That elements are displayed in the StartTrainingTestarModel
         new SeleniumHelper()
-                .isDisplayed(TestarModelPage)
-                .click(ExploreModelInStartTrainingTestarModel);
+                //.isDisplayed(TestarModelPage)
+                .click(ExploreModelInStartTrainingTestarModel)
+                .click(FirstDatasetPickAlabel)
+                .click(FirstLabelChosen)
+                .click(ChoosingFirstLabel)
+                .click(SecondLabelChosen)
+                .click(ChoosingSecondLabel)
+                .click(ThirdLabelChosen)
+                .click(SecondDatasetPickAlabel);
+
+
+
+
+
 
         //Asserts that elements are displayed in the Cluster Page and creates first label
-        new SeleniumHelper()
+        /*new SeleniumHelper()
                 .isDisplayed(ClusterPage)
                 .click(AddAlabelInClusterPage)
                 .setText(NameOfLabelBox, NameOfFirstLabel)
@@ -82,10 +98,12 @@ public class LabelfTest extends DriverSetup {
                 .setText(NameOfSecondLabelBox, NameofSecondLabel)
                 .setText(NameOfSecondDescriptionBox, DescriptionOfSecondLabel);
 
+        //Scroll until element is clickable
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement Element = driver.findElement(By.xpath("//*[@id=\"app\"]/div[16]/div/div/div/div/div/span/div/div[2]/div[2]/form/div[2]"));
         js.executeScript("arguments[0].scrollIntoView();", Element);
 
+        //Accepting Single Choise pop up
         new SeleniumHelper()
                 .click(AddNewelyCreatedSecoundLabel)
                 .click(SingleChoice);
@@ -96,7 +114,15 @@ public class LabelfTest extends DriverSetup {
                 .click(AddAThirdLabelInClusterPage)
                 .setText(NameOfThirdLabelBox, NameofThirdLabel)
                 .setText(NameOfThridDescriptionBox, DescriptionOfThirdLabel)
-                .click(AddNewelyCreatedThirdLabel);
+                .click(AddNewelyCreatedThirdLabel)
+                .click(CLOSE);*/
+
+
+
+
+
+
+
 
 
 
