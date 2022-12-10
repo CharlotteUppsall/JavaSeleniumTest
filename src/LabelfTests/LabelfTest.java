@@ -62,7 +62,18 @@ public class LabelfTest extends DriverSetup {
         //Asserts That elements are displayed in the StartTrainingTestarModel
         new SeleniumHelper()
                 .isDisplayed(TestarModelPage)
-                .click(AddAlabelInStartTrainingTestarModel)
+                .click(ExploreModelInStartTrainingTestarModel);
+
+
+
+
+
+
+
+
+
+
+                /*.click(AddAlabelInStartTrainingTestarModel)
                 .setText(NameOfLabelBox, NameOfFirstLabel)
                 .setText(LabelDescription, DescriptionOfFirstLabel);
 
@@ -71,6 +82,18 @@ public class LabelfTest extends DriverSetup {
         WebElement Element = driver.findElement(By.xpath("//*[@id=\"app\"]/div[8]/div/div[1]/div[4]/div/div/span/div[2]/div[2]/form/div[2]"));
         js.executeScript("arguments[0].scrollIntoView();", Element);
 
+       new SeleniumHelper()
+                .click(AddNewelyCreatedLabel);
+        Thread.sleep(20000);
+        new SeleniumHelper()
+                .click(AddSecondLabel)
+                .setText(NameOfLabelBox, NameofSecondLabel)
+                .setText(LabelDescription, DescriptionOfSecondLabel);
+
+        JavascriptExecutor jssecond = (JavascriptExecutor) driver;
+        WebElement Elementsecond = driver.findElement(By.xpath("//*[@id=\"app\"]/div[8]/div/div[1]/div[4]/div/div/span/div[2]/div[2]/form/div[2]"));
+        js.executeScript("arguments[0].scrollIntoView();", Elementsecond);
+
         new SeleniumHelper()
                 .click(AddNewelyCreatedLabel);
 
@@ -78,7 +101,7 @@ public class LabelfTest extends DriverSetup {
 
         //Opens and Veryfies Cluster Page
         //new SeleniumHelper()
-               // .isDisplayed(ClusterPage);
+          */     // .isDisplayed(ClusterPage);
     }
 }
 
