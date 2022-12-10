@@ -2,6 +2,7 @@ package LabelfTests;
 
 import Helpers.DriverSetup;
 import Helpers.SeleniumHelper;
+import Locators.StartTrainingTestarModel;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -63,6 +64,35 @@ public class LabelfTest extends DriverSetup {
         new SeleniumHelper()
                 .isDisplayed(TestarModelPage)
                 .click(ExploreModelInStartTrainingTestarModel);
+
+        //Asserts that elements are displayed in the Cluster Page and creates first label
+        new SeleniumHelper()
+                .isDisplayed(ClusterPage)
+                .click(AddAlabelInClusterPage)
+                .setText(NameOfLabelBox, NameOfFirstLabel)
+                .setText(LabelDescription, DescriptionOfFirstLabel)
+                .click(AddCreatedlabelInClusterPage);
+
+        //Creating second label
+        new SeleniumHelper()
+                .isDisplayed(ClusterPage)
+                .click(PickAlabelMeny)
+                .click(PickAlabelMeny)
+                .click(AddASecoundLabelInClusterPage)
+                .setText(NameOfLabelBox, NameofSecondLabel)
+                .setText(LabelDescription, DescriptionOfSecondLabel)
+                .click(AddCreatedlabelInClusterPage);
+
+        //Creating third label
+        new SeleniumHelper()
+                .isDisplayed(ClusterPage)
+                .click(PickAlabelMeny)
+                .click(PickAlabelMeny)
+                .click(AddAThirdLabelInClusterPage)
+                .setText(NameOfLabelBox, NameofThirdLabel)
+                .setText(LabelDescription, DescriptionOfThirdLabel)
+                .click(AddCreatedlabelInClusterPage);
+
 
 
 
