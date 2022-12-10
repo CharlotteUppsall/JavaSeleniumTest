@@ -79,19 +79,24 @@ public class LabelfTest extends DriverSetup {
                 .click(PickAlabelMeny)
                 .click(PickAlabelMeny)
                 .click(AddASecoundLabelInClusterPage)
-                .setText(NameOfLabelBox, NameofSecondLabel)
-                .setText(LabelDescription, DescriptionOfSecondLabel)
-                .click(AddCreatedlabelInClusterPage);
+                .setText(NameOfSecondLabelBox, NameofSecondLabel)
+                .setText(NameOfSecondDescriptionBox, DescriptionOfSecondLabel);
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement Element = driver.findElement(By.xpath("//*[@id=\"app\"]/div[16]/div/div/div/div/div/span/div/div[2]/div[2]/form/div[2]"));
+        js.executeScript("arguments[0].scrollIntoView();", Element);
+
+        new SeleniumHelper()
+                .click(AddNewelyCreatedSecoundLabel)
+                .click(SingleChoice);
 
         //Creating third label
         new SeleniumHelper()
                 .isDisplayed(ClusterPage)
-                .click(PickAlabelMeny)
-                .click(PickAlabelMeny)
                 .click(AddAThirdLabelInClusterPage)
-                .setText(NameOfLabelBox, NameofThirdLabel)
-                .setText(LabelDescription, DescriptionOfThirdLabel)
-                .click(AddCreatedlabelInClusterPage);
+                .setText(NameOfThirdLabelBox, NameofThirdLabel)
+                .setText(NameOfThridDescriptionBox, DescriptionOfThirdLabel)
+                .click(AddNewelyCreatedThirdLabel);
 
 
 
