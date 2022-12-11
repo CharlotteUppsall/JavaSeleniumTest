@@ -17,12 +17,14 @@ import static Helpers.LabelUtils.*;
 import static Helpers.LoginUtils.*;
 import static Locators.ChoosingLabels.*;
 import static Locators.ClusterPage.*;
+import static Locators.ClusterRullgardinsMenu.*;
 import static Locators.HamburgerMenu.*;
 import static Locators.LoginWindow.*;
 import static Locators.SartTrainingPage.*;
 import static Locators.StartTrainingTestarModel.*;
 import static Locators.TestarModel.*;
 import static Locators.userIconMenu.*;
+import static Locators.SettingsPageInTestarModel.*;
 
 
 
@@ -34,12 +36,16 @@ public class LabelfTest extends DriverSetup {
         List<By> hamburgerMenu = Arrays.asList(ModelsButton, DatasetsInHamburger,
                 SharedInHamburger, UsersInHamburger, APIinHambureger, BillingInHamburger, IntegrationsInHambureger,
                 CreateWorkspaceInHamburger);
+        List<By> hamburgerManuAfterScroll = Arrays.asList(TestarModelInHamburger, MyFirstWorkspaceInHamburger);
         List<By> startTrainingPage = Arrays.asList(ModelsButton,DatasetsButton, IntegrationsButton, HamburgerMenu,
                 SettingOnStartTrainingPage,OveriewOnStartTrainingPage, MetricsOnStartTrainingPage, APIOnStartTrainingPage,
                 StartTrainingOnStartTrainingPage);
         List<By> TestarModelPage = Arrays.asList(ExploreModelInStartTrainingTestarModel, NewInStartTrainingTestarModel,
                 SettingsInStartTrainingTestarModel, CloseButtonInStartTrainingTestarModel,AddAlabelInStartTrainingTestarModel);
         List<By> ClusterPage = Arrays.asList(Previous, Next,ClusterList, CLOSE,Search);
+        List<By> Settings = Arrays.asList( ModelsButtonInTestarModel, DatasetsButtonInTestarModel, IntegrationsButtonInTestarModel,
+                SettingInTestarModel, OveriewOnStartTrainingPageInTestarModel, APIOnStartTrainingPageInTestarModel,
+                StartTrainingOnStartTrainingPageInTestarModel, MetricsOnStartTrainingPageInTestarModel);
 
         //Logging in
         new SeleniumHelper()
@@ -53,36 +59,27 @@ public class LabelfTest extends DriverSetup {
                 .isDisplayed(homePage)
                 .click(HamburgerMenu);
 
-        //Asserts that elements are displayed in the hamburger menu and opening testar model
+        //Asserts that elements are displayed in the hamburger menu
         new SeleniumHelper()
-                .isDisplayed(hamburgerMenu)
+                .isDisplayed(hamburgerMenu);
+
+        JavascriptExecutor je = (JavascriptExecutor) driver;
+        WebElement hamburger = driver.findElement(By.xpath("//*[contains(text(),'TestarModel')]"));
+        je.executeScript("arguments[0].scrollIntoView();", hamburger);
+
+        new SeleniumHelper()
+                .isDisplayed(hamburgerManuAfterScroll)
                 .click(HamburgerMenu)
                 .click(OpeningTestarModel);
 
         //Asserts that elements are displayed in the StartTrainingPage
         new SeleniumHelper()
                 .isDisplayed(startTrainingPage)
-                .click(StartTrainingOnStartTrainingPage);
-
-        //Asserts That elements are displayed in the StartTrainingTestarModel
-        new SeleniumHelper()
-                //.isDisplayed(TestarModelPage)
-                .click(ExploreModelInStartTrainingTestarModel)
-                .click(FirstDatasetPickAlabel)
-                .click(FirstLabelChosen)
-                .click(ChoosingFirstLabel)
-                .click(SecondLabelChosen)
-                .click(ChoosingSecondLabel)
-                .click(ThirdLabelChosen)
-                .click(SecondDatasetPickAlabel);
-
-
-
-
-
+                .click(StartTrainingOnStartTrainingPage)
+                .click(ExploreModelInStartTrainingTestarModel);
 
         //Asserts that elements are displayed in the Cluster Page and creates first label
-        /*new SeleniumHelper()
+        new SeleniumHelper()
                 .isDisplayed(ClusterPage)
                 .click(AddAlabelInClusterPage)
                 .setText(NameOfLabelBox, NameOfFirstLabel)
@@ -114,55 +111,109 @@ public class LabelfTest extends DriverSetup {
                 .click(AddAThirdLabelInClusterPage)
                 .setText(NameOfThirdLabelBox, NameofThirdLabel)
                 .setText(NameOfThridDescriptionBox, DescriptionOfThirdLabel)
-                .click(AddNewelyCreatedThirdLabel)
-                .click(CLOSE);*/
+                .click(AddNewelyCreatedThirdLabel);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                /*.click(AddAlabelInStartTrainingTestarModel)
-                .setText(NameOfLabelBox, NameOfFirstLabel)
-                .setText(LabelDescription, DescriptionOfFirstLabel);
-
-        // Scroll down to "Create Label button"
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement Element = driver.findElement(By.xpath("//*[@id=\"app\"]/div[8]/div/div[1]/div[4]/div/div/span/div[2]/div[2]/form/div[2]"));
-        js.executeScript("arguments[0].scrollIntoView();", Element);
-
-       new SeleniumHelper()
-                .click(AddNewelyCreatedLabel);
-        Thread.sleep(20000);
+        //Asserts That elements are displayed in the StartTrainingTestarModel
         new SeleniumHelper()
-                .click(AddSecondLabel)
-                .setText(NameOfLabelBox, NameofSecondLabel)
-                .setText(LabelDescription, DescriptionOfSecondLabel);
+                .isDisplayed(ClusterPage)
+                .click(PickAlabelMeny2)
+                .click(FirstDatasetPickAlabel)
+                .click(FirstLabelChosen)
+                .click(ChoosingFirstLabel)
+                .click(SecondLabelChosen)
+                .click(ChoosingSecondLabel)
+                .click(ThirdLabelChosen)
+                .click(SecondDatasetPickAlabel);
 
-        JavascriptExecutor jssecond = (JavascriptExecutor) driver;
-        WebElement Elementsecond = driver.findElement(By.xpath("//*[@id=\"app\"]/div[8]/div/div[1]/div[4]/div/div/span/div[2]/div[2]/form/div[2]"));
-        js.executeScript("arguments[0].scrollIntoView();", Elementsecond);
+        //Asserts that NEXT button in explore model feature works
+        new SeleniumHelper()
+                .click(Next)
+                .click(VerifyCluster2)
+                .click(Next)
+                .click(Next)
+                .click(Next)
+                .click(Next)
+                .click(VerifyCluster6)
+                .click(Previous)
+                .click(Previous)
+                .click(Previous)
+                .click(Previous)
+                .click(Previous)
+                .click(Previous)
+                .click(VerifyCluster0);
+
+        //Scroll down Cluster:0 until element is clickable
+        JavascriptExecutor jg = (JavascriptExecutor) driver;
+        WebElement Clsuter5 = driver.findElement(By.xpath("//*[contains(text(),'5 (10 unlabeled items)')]"));
+        jg.executeScript("arguments[0].scrollIntoView();", Clsuter5);
+        new SeleniumHelper()
+                .click(Cluster5)
+                .click(VerifyCluster5);
+
+        JavascriptExecutor ja = (JavascriptExecutor) driver;
+        WebElement Clsuter10 = driver.findElement(By.xpath("//*[contains(text(),'10 (9 unlabeled items)')]"));
+        ja.executeScript("arguments[0].scrollIntoView();", Clsuter10);
+        new SeleniumHelper()
+                .click(Cluster10)
+                .click(VerifyCluster10);
+
+        JavascriptExecutor jb = (JavascriptExecutor) driver;
+        WebElement Clsuter15 = driver.findElement(By.xpath("//*[contains(text(),'15 (6 unlabeled items)')]"));
+        jb.executeScript("arguments[0].scrollIntoView();", Clsuter15);
+        new SeleniumHelper()
+                .click(Cluster15)
+                .click(VerifyCluster15);
+
+        JavascriptExecutor jc = (JavascriptExecutor) driver;
+        WebElement Clsuter20 = driver.findElement(By.xpath("//*[contains(text(),'20 (6 unlabeled items)')]"));
+        jc.executeScript("arguments[0].scrollIntoView();", Clsuter20);
+        new SeleniumHelper()
+                .click(Cluster20)
+                .click(VerifyCluster20);
+
+        // Going from explore model feature to deleting labels
+        new SeleniumHelper()
+                .click(CLOSE);
+        new SeleniumHelper()
+                .isDisplayed(TestarModelPage)
+                .click(CloseTestarModelPage)
+                .click(ModelsButton);
+        new SeleniumHelper()
+                .isDisplayed(homePage)
+                .click(MoreVertButton)
+                .click(SetingsInVertButton);
+        new SeleniumHelper()
+                .isDisplayed(Settings);
+
+        JavascriptExecutor jd = (JavascriptExecutor) driver;
+        WebElement AddaNewLabel = driver.findElement(By.xpath("//*[contains(text(),' Add a new label ')]"));
+        jd.executeScript("arguments[0].scrollIntoView();", AddaNewLabel);
 
         new SeleniumHelper()
-                .click(AddNewelyCreatedLabel);
+                .click(EditFirstLabelInSettings)
+                .click(DeleteLabelInSettings)
+                .click(DeleteForeverInSettings);
 
+        JavascriptExecutor jh = (JavascriptExecutor) driver;
+        WebElement AddNewLabel = driver.findElement(By.xpath("//*[contains(text(),' Add a new label ')]"));
+        jh.executeScript("arguments[0].scrollIntoView();", AddNewLabel);
 
+        new SeleniumHelper()
+                .click(EditSecondLabelInSettings)
+                .click(DeleteLabelInSettings)
+                .click(DeleteForeverInSettings);
 
-        //Opens and Veryfies Cluster Page
-        //new SeleniumHelper()
-          */     // .isDisplayed(ClusterPage);
+        JavascriptExecutor jf = (JavascriptExecutor) driver;
+        WebElement AddaNewLabell = driver.findElement(By.xpath("//*[contains(text(),' Add a new label ')]"));
+        jf.executeScript("arguments[0].scrollIntoView();", AddaNewLabell);
+
+        new SeleniumHelper()
+                .click(EditThirdLabelInSettings)
+                .click(DeleteLabelInSettings)
+                .click(DeleteForeverInSettings)
+                .click(userMenuIcon)
+                .click(LogoutButton);
     }
 }
 
