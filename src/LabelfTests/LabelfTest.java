@@ -78,7 +78,6 @@ public class LabelfTest extends DriverSetup {
                 .isDisplayed(ClusterPage)
                 .click(AddAlabelInClusterPage)
                 .setText(NameOfLabelBox, NameOfFirstLabel)
-                .setText(LabelDescription, DescriptionOfFirstLabel)
                 .click(AddCreatedlabelInClusterPage);
 
         //Creating second label
@@ -87,13 +86,12 @@ public class LabelfTest extends DriverSetup {
                 .click(PickAlabelMeny)
                 .click(PickAlabelMeny)
                 .click(AddASecoundLabelInClusterPage)
-                .setText(NameOfSecondLabelBox, NameofSecondLabel)
-                .setText(NameOfSecondDescriptionBox, DescriptionOfSecondLabel);
+                .setText(NameOfSecondLabelBox, NameofSecondLabel);
 
         //Scroll until element is clickable
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement Element = driver.findElement(By.xpath("//*[@id=\"app\"]/div[16]/div/div/div/div/div/span/div/div[2]/div[2]/form/div[2]"));
-        js.executeScript("arguments[0].scrollIntoView();", Element);
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
+        //WebElement Element = driver.findElement(By.xpath("//*[@id=\"app\"]/div[17]/div/div/div/div/div/span/div/div[1]/div[2]/form/div[2]"));
+        //js.executeScript("arguments[0].scrollIntoView();", Element);
 
         //Accepting Single Choise pop up
         new SeleniumHelper()
@@ -105,7 +103,6 @@ public class LabelfTest extends DriverSetup {
                 .isDisplayed(ClusterPage)
                 .click(AddAThirdLabelInClusterPage)
                 .setText(NameOfThirdLabelBox, NameofThirdLabel)
-                .setText(NameOfThridDescriptionBox, DescriptionOfThirdLabel)
                 .click(AddNewelyCreatedThirdLabel);
 
 
@@ -115,14 +112,13 @@ public class LabelfTest extends DriverSetup {
                 .click(PickAlabelMeny2)
                 .click(FirstDatasetPickAlabel)
                 .click(FirstLabelChosen)
-                .click(SecondLabelChosen)
-                .click(ChoosingSecondLabel);
+                .click(SecondLabelChosen);
 
-        Thread.sleep(5000);
+        Thread.sleep(3000);
 
         new SeleniumHelper()
-                .click(ThirdLabelChosen)
-                .click(SecondDatasetPickAlabel);
+                .click(ChoosingSecondLabel)
+                .click(ChoosingThridLabel);
 
         //Asserts that NEXT button in explore model feature works
         new SeleniumHelper()
@@ -143,28 +139,28 @@ public class LabelfTest extends DriverSetup {
 
         //Scroll down Cluster:0 until element is clickable
         JavascriptExecutor jg = (JavascriptExecutor) driver;
-        WebElement Clsuter5 = driver.findElement(By.xpath("//*[contains(text(),'5 (10 unlabeled items)')]"));
+        WebElement Clsuter5 = driver.findElement(By.xpath("//*[contains(text(),'5 (7 unlabeled items)')]"));
         jg.executeScript("arguments[0].scrollIntoView();", Clsuter5);
         new SeleniumHelper()
                 .click(Cluster5)
                 .click(VerifyCluster5);
 
         JavascriptExecutor ja = (JavascriptExecutor) driver;
-        WebElement Clsuter10 = driver.findElement(By.xpath("//*[contains(text(),'10 (9 unlabeled items)')]"));
+        WebElement Clsuter10 = driver.findElement(By.xpath("//*[contains(text(),' 10 (6 unlabeled items) ')]"));
         ja.executeScript("arguments[0].scrollIntoView();", Clsuter10);
         new SeleniumHelper()
                 .click(Cluster10)
                 .click(VerifyCluster10);
 
         JavascriptExecutor jb = (JavascriptExecutor) driver;
-        WebElement Clsuter15 = driver.findElement(By.xpath("//*[contains(text(),'15 (6 unlabeled items)')]"));
+        WebElement Clsuter15 = driver.findElement(By.xpath("//*[contains(text(),' 15 (8 unlabeled items) ')]"));
         jb.executeScript("arguments[0].scrollIntoView();", Clsuter15);
         new SeleniumHelper()
                 .click(Cluster15)
                 .click(VerifyCluster15);
 
         JavascriptExecutor jc = (JavascriptExecutor) driver;
-        WebElement Clsuter20 = driver.findElement(By.xpath("//*[contains(text(),'20 (6 unlabeled items)')]"));
+        WebElement Clsuter20 = driver.findElement(By.xpath("//*[contains(text(),' 20 (6 unlabeled items) ')]"));
         jc.executeScript("arguments[0].scrollIntoView();", Clsuter20);
         new SeleniumHelper()
                 .click(Cluster20)
@@ -175,7 +171,12 @@ public class LabelfTest extends DriverSetup {
                 .click(CLOSE);
         new SeleniumHelper()
                 .isDisplayed(TestarModelPage)
-                .click(CloseTestarModelPage)
+                .click(CloseTestarModelPage);
+
+        Thread.sleep(3000);
+
+        new SeleniumHelper()
+                .click(ClosePoUp)
                 .click(ModelsButton);
         new SeleniumHelper()
                 .isDisplayed(homePage)

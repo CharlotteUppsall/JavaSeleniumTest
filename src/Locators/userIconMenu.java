@@ -3,7 +3,7 @@ package Locators;
 import org.openqa.selenium.By;
 
 public class userIconMenu {
-    public static By userMenuIcon = By.xpath("//*[@id=\"app\"]/div[7]/div[1]/nav/div/div[4]/div/button/div/div");
+    public static By userMenuIcon = By.xpath("//*[@id=\"app\"]/div[4]/div[1]/nav/div/div[4]/div/button/div/div");
 
     public static By ModelsButton = By.xpath("//*[@id=\"models-button-navbar\"]/div/span[1]");
     public static By DatasetsButton = By.xpath("//*[contains(text(),'table_view')]");
