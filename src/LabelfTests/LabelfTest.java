@@ -2,14 +2,10 @@ package LabelfTests;
 
 import Helpers.DriverSetup;
 import Helpers.SeleniumHelper;
-import Locators.StartTrainingTestarModel;
-import com.google.common.base.Verify;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.*;
 
@@ -25,7 +21,6 @@ import static Locators.StartTrainingTestarModel.*;
 import static Locators.TestarModel.*;
 import static Locators.userIconMenu.*;
 import static Locators.SettingsPageInTestarModel.*;
-
 
 
 public class LabelfTest extends DriverSetup {
@@ -120,9 +115,12 @@ public class LabelfTest extends DriverSetup {
                 .click(PickAlabelMeny2)
                 .click(FirstDatasetPickAlabel)
                 .click(FirstLabelChosen)
-                .click(ChoosingFirstLabel)
                 .click(SecondLabelChosen)
-                .click(ChoosingSecondLabel)
+                .click(ChoosingSecondLabel);
+
+        Thread.sleep(5000);
+
+        new SeleniumHelper()
                 .click(ThirdLabelChosen)
                 .click(SecondDatasetPickAlabel);
 

@@ -11,10 +11,7 @@ public class ClusterPage {
     public static By AddAlabelInClusterPage = By.xpath("//*[@id=\"app\"]/div[1]/div/div/div/div/div/span/div/div[1]/div/div[2]/div[1]/div/button/div/span");
     public static By NameOfLabelBox = By.xpath ("//*[@id=\"app\"]/div[2]/div/div/div/div/div/span/div/div[1]/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input");
     public static By LabelDescription = By.xpath("//*[@id=\"app\"]/div[2]/div/div/div/div/div/span/div/div[1]/div[2]/form/div[1]/div/div/div[2]/div[4]/div/div/div[1]/div[1]/textarea");
-    public static By AddNewelyCreatedLabel = By.xpath("//*[contains(text(),'Add label')]");
-    public static By AddSecondLabel = By.xpath("//*[contains(text(),'Add a label')]");
     public static By AddCreatedlabelInClusterPage = By.xpath("//*[@id=\"app\"]/div[2]/div/div/div/div/div/span/div/div[1]/div[2]/form/div[2]/button/div/i");
-
     public static By PickAlabelMeny = By.xpath("//*[@id=\"app\"]/div[15]/div/div/div/div/div/span/div/div[1]/div/div[2]/div[3]/div/div[2]/div/button/div");
     public static By PickAlabelMeny2 = By.xpath("//*[@id=\"app\"]/div[16]/div/div/div/div/div/span/div/div[1]/div/div[2]/div[3]/div/div[2]/div/button/div");
     public static By AddASecoundLabelInClusterPage = By.xpath("//*[@id=\"app\"]/div[15]/div/div/div/div/div/span/div/div[2]/div/div[2]/div[1]/div/button/div/span");
@@ -30,11 +27,8 @@ public class ClusterPage {
     public static By VerifyCluster6 = By.xpath( "//*[contains(text(),'Cluster: 6')]");
     public static By VerifyCluster0 = By.xpath( "//*[contains(text(),'Cluster: 0')]");
     public static By VerifyCluster5 = By.xpath( "//*[contains(text(),'Cluster: 5')]");
-
     public static By VerifyCluster10 = By.xpath( "//*[contains(text(),'Cluster: 10')]");
-
     public static By VerifyCluster15 = By.xpath( "//*[contains(text(),'Cluster: 15')]");
-
     public static By VerifyCluster20 = By.xpath( "//*[contains(text(),'Cluster: 20')]");
 
 
