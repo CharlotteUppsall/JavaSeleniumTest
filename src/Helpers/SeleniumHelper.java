@@ -31,8 +31,8 @@ public class SeleniumHelper extends DriverSetup {
     }
 
     private SeleniumHelper waitForElement(By element) throws InterruptedException {
-        Thread.sleep(400);
-        WebElement firstResult = new WebDriverWait(driver, 30)
+        //Thread.sleep(400);
+        WebElement firstResult = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.elementToBeClickable(element));
         if (firstResult.isDisplayed()){
 

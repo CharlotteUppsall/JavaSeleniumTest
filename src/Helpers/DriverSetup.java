@@ -22,12 +22,12 @@ public class DriverSetup {
     }
 
     public void getWaitDriver() {
-        WebDriverWait driverWait = new WebDriverWait(driver, 15);
+        WebDriverWait driverWait = new WebDriverWait(driver, 10);
     }
 
     @AfterClass
     public static void afterMethod() {
-        //driver.quit();
+        driver.quit();
         System.out.println("Test Finished!");
     }
 }

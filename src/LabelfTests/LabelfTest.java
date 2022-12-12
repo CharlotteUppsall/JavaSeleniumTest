@@ -88,11 +88,6 @@ public class LabelfTest extends DriverSetup {
                 .click(AddASecoundLabelInClusterPage)
                 .setText(NameOfSecondLabelBox, NameofSecondLabel);
 
-        //Scroll until element is clickable
-        //JavascriptExecutor js = (JavascriptExecutor) driver;
-        //WebElement Element = driver.findElement(By.xpath("//*[@id=\"app\"]/div[17]/div/div/div/div/div/span/div/div[1]/div[2]/form/div[2]"));
-        //js.executeScript("arguments[0].scrollIntoView();", Element);
-
         //Accepting Single Choise pop up
         new SeleniumHelper()
                 .click(AddNewelyCreatedSecoundLabel)
@@ -114,7 +109,7 @@ public class LabelfTest extends DriverSetup {
                 .click(FirstLabelChosen)
                 .click(SecondLabelChosen);
 
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
 
         new SeleniumHelper()
                 .click(ChoosingSecondLabel)
@@ -173,7 +168,7 @@ public class LabelfTest extends DriverSetup {
                 .isDisplayed(TestarModelPage)
                 .click(CloseTestarModelPage);
 
-        Thread.sleep(3000);
+       // Thread.sleep(3000);
 
         new SeleniumHelper()
                 .click(ClosePoUp)
